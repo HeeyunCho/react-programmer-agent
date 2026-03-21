@@ -1,0 +1,23 @@
+@startuml
+skinparam handwritten false
+skinparam monochrome true
+
+title ReAct State Machine
+
+state "IDLE" as Idle
+state "START_SESSION" as Start
+state "RECORD_THOUGHT" as Thought
+state "RECORD_ACTION" as Action
+state "RECORD_OBSERVATION" as Observation
+state "GET_TRANSCRIPT" as Transcript
+
+[*] --> Idle
+Idle --> Start : init_task(goal)
+Start --> Thought : record_thought(thought)
+Thought --> Action : record_action(action)
+Action --> Observation : record_observation(result)
+Observation --> Thought : Next loop?
+Observation --> Transcript : get_transcript()
+Transcript --> Idle : task complete
+
+@enduml
