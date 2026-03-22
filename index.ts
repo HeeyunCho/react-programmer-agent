@@ -147,17 +147,17 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     switch (name) {
       case "start_session": {
         const { goal, context } = StartSessionSchema.parse(args);
-        const id = uuidv4();
+        const reactSessionUniqueIdentifier = uuidv4();
         const session: ReActSession = {
-          id,
+          id: reactSessionUniqueIdentifier,
           goal,
           context,
           steps: [],
           status: 'IN_PROGRESS',
         };
-        sessionStore.set(id, session);
+        sessionStore.set(reactSessionUniqueIdentifier, session);
         return {
-          content: [{ type: "text", text: `Session started with ID: ${id}\nGoal: ${goal}` }],
+          content: [{ type: "text", text: `Session started with ID: ${reactSessionUniqueIdentifier}\nGoal: ${goal}` }],
         };
       }
 
