@@ -1,35 +1,29 @@
-# ReAct Programmer Agent
+# 🚀 React Programmer Agent v8.5 // Celestial
 
-A specialized MCP server for complex programming tasks following the **Reason and Act (ReAct)** pattern. It provides a structured state machine for traceable and adaptive reasoning.
+The **Core Component** for the Gemini CLI ecosystem. Evolved into a **Hardened Agentic System** that enforces deterministic engineering through Harness guardrails.
 
-## 🚀 Purpose
-Software engineering tasks often require more than a single pass. This agent implements an iterative loop of **Thought, Action, and Observation**, allowing AI models to build dynamic plans and adjust their approach based on real-time feedback from the environment.
+## 🏗️ Celestial Architecture
+```mermaid
+graph TD
+    subgraph Core [Component Engine]
+        Init[Initialize] --> State[Internal State]
+        State --> Loop[Processing Loop]
+    end
 
-## 🛠 Features
-- **Stateful Reasoning**: Maintains a full session history of the reasoning loop.
-- **Transcript Generation**: Get a complete chronological report of how a solution was derived.
-- **Structured Tools**:
-  - `start_session`: Initialize a mission with specific goals and context.
-  - `record_thought`: Capture internal trade-offs and decision logic.
-  - `record_action`: Log intended tool calls or system commands.
-  - `record_observation`: Capture tool outputs and update the mental model.
+    subgraph Security [Security Gate v8.5.1]
+        SH[Security Hook] --> |Validated| Loop
+    end
 
-## 📦 Installation
-```bash
-npm install
-npm run build
+    Loop --> |Action| Out[Output]
 ```
 
-## 🤖 Usage in MCP
-Register the server in your `settings.json`:
-```json
-"react-programmer-agent": {
-  "command": "node",
-  "args": ["C:/gemini_project/react-programmer-agent/dist/index.js"]
-}
-```
+## 🌟 Key Features (v8.5)
+- **Harness Integration**: Full compatibility with Mitchell Hashimoto loops for deterministic state transitions.
+- **Celestial Standards**: Upgraded for the v8.5 ecosystem with real-time tracking.
+- **Native Security**: Integrated with the mandatory pre-commit validation hook (v8.5.1).
 
-## 📜 The ReAct Mandate
-1. **THOUGHT**: Analyze the current state and decide the next step.
-2. **ACTION**: Select and execute the appropriate tool.
-3. **OBSERVATION**: Parse the result and update project state.
+## 🛡️ Security Policy
+This repository follows the global ecosystem [Security Policy](../SECURITY.md).
+
+---
+**Standardized by Gemini CLI** | *v8.5.1 Deployment Active*
